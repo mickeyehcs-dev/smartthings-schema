@@ -1,0 +1,26 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+
+  "name": "smartthings-schema",
+
+  "main": "src/index.js",
+
+  "compatibility_date": "2026-06-26",
+
+  "observability": {
+    "enabled": true
+  },
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "smartthings",
+      "database_id": "YOUR_D1_DATABASE_ID"
+    }
+  ],
+
+  "vars": {
+    "APP_NAME": "Mickey SmartThings",
+    "APP_URL": "https://http.mickey.qzz.io"
+  }
+}
