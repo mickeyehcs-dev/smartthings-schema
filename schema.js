@@ -26,3 +26,26 @@ VALUES
 ('website','Website','switch','off'),
 ('maintenance','Maintenance','switch','off'),
 ('server','Server','switch','off');
+-- ============================
+-- OAuth Tokens
+-- ============================
+
+CREATE TABLE IF NOT EXISTS oauth_tokens (
+
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+    access_token TEXT UNIQUE NOT NULL,
+
+    refresh_token TEXT UNIQUE NOT NULL,
+
+    expires_at INTEGER NOT NULL,
+
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+
+);
+
+CREATE INDEX IF NOT EXISTS idx_access_token
+ON oauth_tokens(access_token);
+
+CREATE INDEX IF NOT EXISTS idx_refresh_token
+ON oauth_tokens(refresh_token);
